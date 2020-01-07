@@ -8,7 +8,7 @@
     .decor-line {
         position: absolute;
         right: 0px;
-        top: 0px;
+        top: -10px;
         width: 83%;
         height: 10px;
         background-image: -moz-linear-gradient( 0deg, rgba(0,128,226,.2) 0%, rgba(61,200,0,.3) 100%);
@@ -16,7 +16,7 @@
         background-image: -ms-linear-gradient( 0deg, rgba(0,128,226,.2) 0%, rgba(61,200,0,.3) 100%);
         
         &:nth-child(2) {
-            bottom: 0px;
+            bottom: -10px;
             left: 0px;
             top: initial;
             background-image: -moz-linear-gradient( 0deg, rgba(61,200,0,.3) 0%, rgba(0,128,226,.2) 100%);
@@ -195,6 +195,63 @@
     }
 }
 
+/* Counsultation callback */
+
+.callback-consultation {
+    margin-top: 145px;
+}
+
+.callback-consultation__wrapper {
+    padding: 100px 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .callback_form {
+        flex-direction: column;
+        margin-top: 25px;
+    }
+
+    .textarea__wrapper {
+        .main-input {
+            width: 635px;
+        }
+    }
+
+    .input__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .main-input {
+            width: 300px;
+        }
+    }
+    
+    .callback_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        margin-top: 20px;
+        
+        .main_button {
+            margin-top: 15px;
+        }
+    }
+}
+
+.callback-consultation__header {
+    max-width: 635px;
+    text-align: center;
+
+    p {
+        margin-top: 10px;
+        color: #626a79;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+    }
+}
 
 /* Services */
 

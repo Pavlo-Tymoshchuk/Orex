@@ -3,7 +3,7 @@ var gulp=require('gulp'), browserSync=require('browser-sync').create(), less=req
 gulp.task('serve', ['less'], function() {
 
     browserSync.init({
-        server: "../OrexPRo"
+        server: "../Orex"
     });
     gulp.watch("less/*.less", ['less']);
     gulp.watch("*.html").on('change', browserSync.reload);
