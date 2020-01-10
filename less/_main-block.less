@@ -6,6 +6,38 @@
     margin-top: -90px;
 }
 
+.mobile-video {
+    display: none;
+    position: relative;
+    
+    &:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 165px;
+        height: 100px;
+        background:url(../img/header/header-bg.jpg) no-repeat center;
+        background-size: cover;
+        z-index: 0;
+    }
+    
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+    }
+}
 .main_information_video {
     position: absolute;
     left: 0;
@@ -17,10 +49,10 @@
     &:after {
         position: absolute;
         content: "";
-        left: 0;
+        left: 2px;
         top: 0;
-        width: 165px;
-        height: 100px;
+        width: 125px;
+        height: 80px;
         background:url(../img/header/header-bg.jpg) no-repeat center;
         background-size: cover;
         z-index: 0;
@@ -56,7 +88,7 @@
     
     span {
         font-size: 46px;
-        font-weight: 800;
+        font-weight: 700;
         line-height: 52px;
         background: -moz-linear-gradient( 74deg, rgb(0,128,226) 0%, rgb(61,200,0) 100%);
         background: -webkit-linear-gradient( 74deg, rgb(0,128,226) 0%, rgb(61,200,0) 100%);
@@ -75,19 +107,37 @@
 }
 
 .description {
-    .main_caption {
-        text-align: left;
-    }
-}
-
-.description__wrapper {
     font-size: 16px;
     font-weight: 300;
     line-height: 24px;
     color: #636b7a;
+    
+    .main_caption {
+        text-align: left;
+    }
+    
+    > .description__list {
+        display: none;
+    }
+}
+
+.description__wrapper {
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
+    
+    &.show {
+        .content {
+            max-height: 350px;
+            transition: max-height .4s linear;
+        }
+        
+        .more_link {
+            &::before {
+                content: "Скрыть";
+            }
+        }
+    }
     
     .info {
         width: 50%;
@@ -97,11 +147,26 @@
         }
     }
     
+    .content {
+        max-height: 145px;
+        overflow: hidden;
+        transition: max-height .1s;
+    }
+    
     .more_link {
+        display: none;
         font-size: 12px;
         
+        &::before {
+            content: "Подробнее";
+        }
+        
+        &.show {
+            display: inline-block;
+        }
+        
         &::after {
-            top: 3px;
+            top: 6px;
         }
     }
 }
@@ -161,8 +226,9 @@
     
     h4 {
         font-size: 20px;
-        font-weight: 800;
+        font-weight: 700;
         margin-bottom: 15px;
+        margin-top: 20px;
         color: #333333;
     }
     
@@ -170,12 +236,6 @@
         font-size: 16px;
         color: #626a79;
     }
-}
-
-.benefit__img {
-    width: 145px;
-    height: 145px;
-    margin-bottom: 25px;
 }
 
 /* /About us */
@@ -287,7 +347,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     list-style: none;
 }
 
@@ -295,6 +355,7 @@
     padding-left: 22px;
     position: relative;
     transition: color .4s;
+    margin-bottom: 20px;
     
     a {
         text-decoration: none;
@@ -346,7 +407,6 @@
 
 .portfolio__slider {
     margin-top: 42px;
-    overflow: hidden;
 }
 
 .portfolio__slider_item {
@@ -356,10 +416,16 @@
     left: 0px;
     top: 0px;
     opacity: 0;
+    z-index: -1;
+    
+    .slider_button {
+        display: none;
+    }
     
     &.show {
         position: relative;
         opacity: 1;
+        z-index: 1;
         
         .portfolio__slider_img {
             animation: show-img  1.2s;
@@ -374,10 +440,12 @@
 @keyframes show-img {
     0% {
         transform: translateX(-700px);
+        opacity: 0;
     }
     
     60% {
         transform: translateX(20px);
+        opacity: 1;
     }
     
     80% {
@@ -392,10 +460,12 @@
 @keyframes show-info {
     0% {
         transform: translateX(700px);
+        opacity: 0;
     }
     
     60% {
         transform: translateX(-20px);
+        opacity: 1;
     }
     
     80% {
@@ -413,6 +483,9 @@
     border-radius: 20px;
     border: 1px solid #d8ecdb;
     position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     
     &:after {
         content: "";
@@ -428,14 +501,12 @@
 
 .porfolio__slider_info {
     width: 600px;
-    margin-top: -130px;
-    margin-left: -40px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    margin-top: 30px;
+    margin-left: -90px;
+    z-index: 1;
     
     .caption {
-        font-weight: 900;
+        font-weight: 800;
         font-size: 40px;
         line-height: 70px;
         color: #42516a;
@@ -468,7 +539,6 @@
 }
 
 .portfolio__wrapper {
-    height: 482px;
     position: relative;
 }
 
@@ -480,6 +550,7 @@
     width: 515px;
     display: flex;
     justify-content: space-between;
+    z-index: 2;
     
     .button {
         font-size: 18px;
@@ -580,7 +651,9 @@
 /* News */
 
 .news__wrapper {
-    padding: 150px 0 50px;
+    padding: 150px 15px 50px;
+    max-width: 1160px;
+    margin: 0 auto;
 }
 
 .news__list {
@@ -599,7 +672,12 @@
     border-radius: 20px;
     padding-bottom: 20px;
     transition: box-shadow .4s;
-
+    
+    &:last-child,
+    &:first-child {
+        display: none;
+    }
+    
     &:active {
         transform: scale(0.9);
     }
@@ -626,7 +704,7 @@
             content: "";
             position: absolute;
             left: 0px;
-            top: 5px;
+            top: 7px;
             width: 100%;
             height: 1px;
             background-color: #eaedf0;
@@ -639,7 +717,7 @@
 }
 
 .news__img {
-    width: 350px;
+    width: 100%;
     height: 200px;
     border-radius: 20px;
     border: 1px solid #d8ecdb;
@@ -651,7 +729,7 @@
     display: block;
     font-weight: 500;
     font-size: 18px;
-    height: 77px;
+    height: 74px;
     overflow: hidden;
     line-height: 24px;
     color: #788190;

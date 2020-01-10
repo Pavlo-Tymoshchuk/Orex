@@ -58,7 +58,7 @@
 
 .footer__politic {
     text-decoration: none;
-    transition: color .4;
+    transition: color .4s;
     position: relative;
     
     &::before {
@@ -86,6 +86,42 @@
             &::before {
                 background-color: #5f6f89;
             }
+        }
+    }
+}
+
+@media (max-width: 1160px) {
+    .footer__wrapper {
+        font-size: 13px;
+        padding: 0px;
+        
+        .email {
+            padding-left: 0px;
+            
+            &::after {
+                display: none;
+            }
+        }
+    }
+    
+    .footer__politic {
+        color: #fff;
+    }
+}
+
+@media (max-width: 775px) {
+    .footer {
+        height: 155px;
+         padding: 32px 0px;
+    }
+    
+    .footer__wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        
+        .copyright {
+            order: 3;
         }
     }
 }

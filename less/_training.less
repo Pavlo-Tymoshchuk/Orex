@@ -3,13 +3,16 @@
 .training-inroduction {
     width: 100%;
     height: 635px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/training-bg.png);
 }
 
 .training-inroduction__wrapper {
     padding-top: 105px;
 
     div {
-        max-width: 740px;
+        max-width: 769px;
     }
 
     .main_caption {
@@ -20,7 +23,7 @@
     h4 {
         font-size: 18px;
         line-height: 30px;
-        font-weight: 800;
+        font-weight: 700;
         color: #42516a;
         margin-bottom: 20px;
     }
@@ -28,7 +31,7 @@
     .decor-line {
         display: flex;
         width: 50px;
-        height: 5px;
+        height: 3px;
         background-color: #37c114;
     }
 
@@ -46,11 +49,25 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        
+        a {
+            transition: color .4s;
+            
+            &:hover {
+                color: #343941;
+            }
+            
+        }
     }
 }
 
+.training-info {
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+}
 .training-info__wrapper {
-    padding-top: 100px;
+    padding-top: 60px;
 
     .main_caption {
         font-size: 56px;
@@ -80,14 +97,7 @@
         margin-right: 0px;
     }
 
-    .logo {
-        width: 100px;
-        height: 140px;
-        background-size: cover;
-        margin-bottom: 25px;
-    }
-
-    span {
+    > span {
         display: block;
         width: 16px;
         height: 13px;
@@ -104,6 +114,10 @@
         font-size: 16px;
         line-height: 24px;
         text-align: center;
+    }
+    
+    .decor-icon {
+        margin-bottom: 25px;
     }
 }
 
@@ -166,6 +180,31 @@
     align-items: center;
     list-style: none;
     margin-top: 25px;
+    position: relative;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        right: 0px;
+        top: 70px;
+        width: 540px;
+        height: 260px;
+        background: url(../img/training-arrow-1.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0px;
+        bottom: 70px;
+        width: 540px;
+        height: 260px;
+        background: url(../img/training-arrow-4.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
 }
 
 .trainung-info__structure_item {
@@ -174,22 +213,68 @@
     width: 550px;
     height: 170px;
     margin-bottom: 80px;
-
+    position: relative;
+    
     .info {
-        width: 365px;
+        width: 385px;
     }
-
+    
+    &::before {
+        content: "";
+        position: absolute;
+        width: 260px;
+        height: 270px;
+    }
+    
+    &:nth-child(2) {
+        &::before{
+            left: -50%;
+            top: 60px;
+            background: url(../img/training-arrow-2.png) no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    
+    &:nth-child(3) {
+        &::before {
+            right: -50%;
+            top: 60px;
+            background: url(../img/training-arrow-3.png) no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    
+    &:nth-child(4) {
+        &::before{
+            left: -50%;
+            top: 60px;
+            background: url(../img/training-arrow-2.png) no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    
     &:first-child {
         align-self: flex-start;
+        
+        &::before {
+            display: none;
+        }
     }
 
     &:last-child {
         align-self: flex-start;
         margin-bottom: 0px;
+        
+        &::before {
+            display: none;
+        }
     }
 
     .decor-number {
-        width: 145px;
+        width: 140px;
         height: 140px;
         border-radius: 50%;
         border: 1px solid #dfecf0;
@@ -200,10 +285,11 @@
             font-weight: 900;
             color: #fff;
             position: absolute;
-            right: -30px;
+            right: -15px;
             top: 50%;
             transform: translateY(-50%);
-            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+            text-shadow: 0px 0px 20px rgba(0, 62, 139, 0.15);
+            line-height: 0;
         }
     }
 
@@ -213,6 +299,7 @@
         color: #42516a;
         font-size: 32px;
         height: 70px;
+        overflow: hidden;
         margin-bottom: 5px;
         font-weight: normal;
     }
@@ -220,25 +307,60 @@
     .decor-line {
         display: flex;
         width: 50px;
-        height: 5px;
+        height: 3px;
         background-color: #37c114;
     }
 
     p {
         color: #788190;
         font-size: 16px;
-        margin-top: 15px;
+        line-height: 24px;
     }
-
+    
+    .content {
+        max-height: 73px;
+        overflow: hidden;
+        margin-top: 15px;
+        transition: max-height .1s;
+        
+        &.show {
+            max-height: 145px;
+            transition: max-height .4s;
+            
+            + .more {
+                &::before {
+                    content: "Скрыть";
+                }
+            }
+        }
+    }
+    
     .more {
+        display: none;
         color: #788190;
         font-size: 16px;
         font-weight: 600;
+        position: relative;
+        z-index: 2;
+        
+        &::before {
+            content: "Читать далее";
+        }
+        
+        &.show {
+            display: block;
+        }
     }
 }
 
 .trainung-info__portfolio {
     margin: 100px 0px 150px;
+}
+
+.callback-training {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .callback-training__wrapper {
@@ -297,5 +419,381 @@
         color: #42516a;
         font-size: 18px;
         margin-top: 15px;
+    }
+}
+
+@media (max-width: 1160px) {
+    /* Training */
+    
+    .training-inroduction {
+        background-image: url(../img/training-bg-1.jpg);
+        background-position: center;
+        height: 395px;
+    }
+    
+    .training-inroduction__wrapper {
+        padding-top: 40px;
+        
+        > div {
+            max-width: 480px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            line-height: 150%;
+            margin-bottom: 0px;
+        }
+        
+        .decor-line {
+            height: 2px;
+            width: 65px;
+        }
+        
+        .main_caption {
+            font-size: 44px;
+            line-height: 110%;
+            margin-bottom: 30px;
+        }
+    }
+    
+    .training-info {
+        background: none !important;
+    }
+    
+    .training-info__wrapper {
+        padding-top: 0px;
+        
+        .main_caption {
+            font-size: 36px;
+            line-height: 40px;
+        }
+    }
+    
+    .trainung-info__education_list {
+        flex-wrap: wrap;
+    }
+    
+    .trainung-info__education_item {
+        width: calc(50% - 30px);
+        margin-right: 0px;
+        margin-bottom: 30px;
+    }
+    
+    .trainung-info__topics_item {
+        width: calc(50% - 30px);
+        padding: 15px 0px;
+        font-size: 16px;
+        line-height: 150%;
+        
+        &:first-child {
+            padding-bottom: 15px;
+            
+            + .trainung-info__topics_item {
+                padding-bottom: 15px;
+            }
+        }
+    }
+    
+    .trainung-info__topics_list {
+        margin-bottom: 0px;
+    }
+    
+    .trainung-info__topics {
+        h6 {
+            font-size: 16px;
+            text-align: left;
+        }
+    }
+    
+    .trainung-info__structure {
+        margin-top: 75px;
+        
+         h4 {
+             font-size: 22px;
+             height: 60px;
+         }
+    }
+    
+    .trainung-info__structure_list {
+        &::before {
+            width: 320px;
+            height: 185px;
+            background:url(../img/training-arrow-tablet-1.png) no-repeat;
+            background-size: contain;
+        }
+        
+        &::after {
+            width: 300px;
+            height: 185px;
+            background:url(../img/training-arrow-tablet-4.png) no-repeat;
+            background-size: contain;
+            bottom: 145px;
+        }
+    }
+    .trainung-info__structure_item {
+        width: 470px;
+        height: 175px;
+        margin-bottom: 40px;
+        
+        .decor-number {
+            width: 110px;
+            height: 110px;
+            
+            span {
+                font-size: 72px;
+                right: -5px;
+            }
+        }
+        
+        .content {
+            &.show {
+                max-height: 120px;
+            }
+        }
+        
+        .decor-line {
+            height: 2px;
+        }
+        
+        .info {
+            width: 340px;
+        }
+        
+        h4 {
+            width: 90%;
+        }
+        
+        &::before {
+            width: 95px;
+            height: 185px;
+        }
+        
+        &:nth-child(2) {
+            &::before {
+                background: url(../img/training-arrow-tablet-2.png) no-repeat;
+                background-size: contain;
+                left: -25%;
+            }
+        }
+        
+         &:nth-child(3) {
+            &::before {
+                background: url(../img/training-arrow-tablet-3.png) no-repeat;
+                background-size: contain;
+                right: -25%;
+            }
+        }
+        
+        &:nth-child(4) {
+            &::before {
+                background: url(../img/training-arrow-tablet-2.png) no-repeat;
+                background-size: contain;
+                left: -25%;
+            }
+        }
+    }
+    
+    .trainung-info__portfolio {
+        margin: 50px 0px 75px;
+    }
+    /* Callback Training */
+    
+    .callback-training {
+        background: none !important;
+    }
+    
+    .callback-training__wrapper {
+        padding: 0px 30px 0px;
+        margin-bottom: 75px;
+        
+        .callback_form {
+            margin-top: 30px;
+        }
+        
+        .input-name {
+            margin-left: 0px;
+        }
+        
+        .textarea__wrapper {
+            .main-input {
+                height: 105px;
+            }
+        }
+        
+        .callback_info {
+            margin-top: 25px;
+        }
+    }
+    
+    .callback-training__header {
+        .main_caption {
+            font-size: 30px;
+            text-align: center;
+        }
+        
+        p {
+            font-size: 16px;
+            margin-top: 25px;
+        }
+    }
+}
+
+@media (max-width: 775px) {
+    
+    .training-inroduction {
+        height: 600px;
+        padding-top: 25px;
+    }
+    
+    .training-inroduction__wrapper {
+        
+        .main_caption {
+            font-size: 28px;
+            line-height: 110%;
+            margin-left: 20px;
+            margin: 0px 0px 15px 20px;
+        }
+        
+        h4 {
+            margin-bottom: 20px;
+        }
+        
+    }
+    
+    .training-info__wrapper {
+        .main_caption {
+            font-size: 24px;
+            line-height: 120%;
+        }
+    }
+    
+    .training-info {
+        margin-top: 25px;
+    }
+    
+    .trainung-info__education_item {
+        width: 100%;
+        
+        .decor-icon {
+            margin-bottom: 15px;
+        }
+        
+        .text {
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 110%;
+        }
+    }
+    
+    .trainung-info__topics_item {
+        width: 100%;
+    }
+    
+    .trainung-info__topics {
+        h6 {
+            margin-top: 10px;
+        }
+    }
+    
+    .trainung-info__structure {
+        margin-top: 55px;
+    }
+    
+    .trainung-info__structure_list {
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    
+    .trainung-info__structure_item {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+        margin-bottom: 100px;
+        
+        .content {
+            .show {
+                max-height: 140px;
+            }
+        }
+        
+        &::before {
+            background: url(../img/training-mobile-arrow.svg) no-repeat center !important;
+            background-size: cover;
+            width: 25px;
+            height: 60px;
+            left: 50% !important;
+            right: initial !important;
+            top: initial !important;
+            bottom: -80px;
+            transform: translateX(-50%);
+        }
+        
+        &:first-child {
+            &::before {
+                display: block;
+            }
+        }
+        
+        h4 {
+            width: 100%;
+            font-size: 18px;
+            height: 45px;
+            justify-content: center;
+        }
+        
+        .decor-number {
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+            
+            span {
+                font-size: 48px;
+            }
+        }
+        
+        .decor-line {
+            margin: 0 auto;
+        }
+        
+        .info {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    
+    /* Training call back */
+    
+    .callback-training__header {
+        .main_caption {
+            font-size: 24px;
+            line-height: 110%;
+        }
+        
+        p {
+            margin-top: 15px;
+        }
+    }
+    .callback-training__wrapper {
+        .callback_form {
+            max-width: 280px;
+        }
+        
+        .main-input {
+            width: 280px;
+        }
+        
+        .textarea__wrapper {
+            .main-input {
+                width: 280px;
+            }
+        }
+        
+        .callback_info {
+            margin-top: 15px;
+        }
     }
 }

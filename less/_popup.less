@@ -76,7 +76,7 @@
 }
 
 .popup__caption {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 24px;
     text-align: center;
     color: #42516A;
@@ -151,6 +151,8 @@
     position: relative;
     
     .main-input {
+        padding-right: 40px;
+        
         cursor: pointer;
         
         &:focus {
@@ -189,5 +191,35 @@
             background-color: #A9B2C0;
             transform: rotate(45deg);
         }
+    }
+}
+
+@media (max-width: 1160px) {
+    .popup-order {
+        .main-input {
+            width: 360px;
+        }
+    }
+    .popup__drop-list {
+        width: 360px;
+    }
+}
+
+@media (max-width: 775px) {
+    .popup-order {
+        .main-input {
+            width: 240px;
+        }
+        
+        .main_button {
+            width: 240px;
+        }
+    }
+    .popup__drop-list {
+        width: 240px;
+    }
+    
+    .popup-order {
+        padding: 35px 30px;
     }
 }

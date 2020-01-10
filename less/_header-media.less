@@ -1,0 +1,216 @@
+@media (max-width: 1360px) {
+    .header__list {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 1160px) {
+    .header {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        background-color: #1b2a44;
+        z-index: 3;
+    }
+    
+    .header__wrapper {
+        position: relative;
+        width: 100%;
+        padding: 0px 25px;
+    }
+    
+    .header__logo {
+        width: 80px;
+        height: 50px;
+    }
+    
+    .mobile-close {
+        display: flex;
+        position: absolute;
+        right: 25px;
+        top: 15px;
+        width: 15px;
+        height: 15px;
+        border: none;
+        background: none;
+        
+        span {
+            &::before {
+                color: #fff;
+                font-weight: bold;
+            }
+        }
+    }
+    
+    .header_nav {
+        display: none;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 420px;
+        height: 100vh;
+        overflow: auto;
+        background: #1B2A44;
+        z-index: 2;
+        
+        .header-more-info__item {
+            a {
+                font-weight: normal;
+                color: #fff;
+                margin-bottom: 20px;
+            }
+        }
+        
+        .change_leng  {
+            display: flex;
+            flex-direction: column;
+            
+            a {
+                margin-bottom: 20px;
+                color: rgba(255, 255, 255, 0.6);
+                
+                &.active {
+                    color: rgba(255, 255, 255, 1);
+                }
+            }
+        }
+        
+        &.show {
+            display: block;
+            animation: show-mobile .4s;
+            z-index: 4;
+        }
+    }
+    
+    @keyframes show-mobile {
+        0% {
+            right: -1000px;
+        }
+        
+        100% {
+            right: 0px;
+        }
+    }
+    
+    .header-more-info__item {
+        font-size: 12px;
+        
+        &.email {
+            font-size: 15px;
+        }
+        
+    }
+    .sub_menu__wrapper {
+        position: relative;
+        background: transparent;
+    }
+    
+    .sub_menu__list {
+        -webkit-columns: 1;
+        -moz-columns: 1;
+        columns: 1; 
+        width: 100%;
+    }
+    
+    .header__list {
+        flex-direction: column;
+        height: 100%;
+        font-size: 16px;
+        padding-top: 60px;
+        padding-left: 25px;
+    }
+    
+    .header__link {
+        color: #fff;
+    }
+    
+    .header__more {
+        &.show {
+            .header__link {
+                span {
+                    transform: translateY(-50%) rotate(180deg);
+                    z-index: 3;
+                    
+                    &::before {
+                        color: #fff;
+                    }
+                }
+            }
+            .sub_menu__wrapper {
+                display: block;
+                z-index: 1;
+                animation: opacity 0.4s;
+                top: 0px;
+                left: 0px;
+                padding: 20px 25px 0px 0px;
+            }
+        }
+    }
+    
+    .header__item {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+    
+    .mobile-burger {
+        display: block;
+        position: relative;
+        width: 20px;
+        height: 16px;
+        border-top: 2px solid #fff;
+        
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+            left: 0px;
+            top: 7px;
+        }
+        
+        &::after {
+            top: 16px;
+        }
+    }
+    
+    
+    .header-more-info__list {
+        .change_leng {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 775px) {
+    /* Header */
+    
+    .header_nav {
+        .header-more-info__item {
+            display: block;
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+    }
+    
+    .header_nav {
+        width: 100%;
+    }
+    
+    .header {
+        height: 50px;
+    }
+    
+    .header__logo {
+        width: 49px;
+        height: 29px;
+    }
+    
+    .header-more-info__list {
+        display: none;
+    }
+
+    
+}

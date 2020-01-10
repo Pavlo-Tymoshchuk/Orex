@@ -1,15 +1,119 @@
 // Header menu
 
-$(".header__more").hover(
-    function() {
-        $(this).children('.header__link').addClass('z_index');
-    },
-    function() {
-        $(this).children('.header__link').removeClass('z_index');
-    }
-);
+function openMenu() {
+    $('.header__more').on('click', function(){
+        $(this).toggleClass('show');
+    });
+}
+
+if($(window).width() < 1161) {
+    openMenu();
+}
+
+$('.mobile-burger').on('click', function(){
+    $('.header_nav').addClass('show');
+    $('html').addClass('overflow');
+});
+
+$('.mobile-close').on('click',function(){
+    $('.header_nav').removeClass('show');
+    $('html').removeClass('overflow');
+});
 
 // /Header menu
+
+// Resize
+$(window).on('resize', function(){
+   if($(window).width() < 1161) {
+        openMenu();
+    }
+    
+    showMoreInfo();
+    showMoreInfoMain();
+});
+
+// /Resize
+
+// Fixed header
+
+$(document).on('scroll',function(){
+    let number = 0;
+    
+    if($(document).width() > 1160) {
+        number = 600;
+    }
+    
+    if($(document).width() < 1160) {
+        number = 400;
+    }
+    
+    if($(document).width() < 775) {
+        number = 260;
+    }
+    
+    if($(document).scrollTop() > number) {
+        $('.header__wrapper').addClass('fixed');
+    }else {
+        if($('.header__wrapper').is('.fixed')) {
+            $('.header__wrapper').addClass('hide');
+            setTimeout(deleteCLass, 300);
+        }
+        
+        function deleteCLass() {
+            $('.header__wrapper').removeClass('hide');
+            $('.header__wrapper').removeClass('fixed');
+        }
+    }
+})
+
+// /Fixed header
+// More info consultation
+
+
+function showMoreInfo() {
+    let wrapper = $('.trainung-info__structure_item');
+    wrapper.each(function(item){
+
+        let content = $(this).find('.content').height();
+        let info = $(this).find('.content p').height();
+
+        if(info > content) {
+            $(this).find('.more').addClass('show');
+        }else {
+            $(this).find('.more').removeClass('show');
+        }
+    });
+}
+showMoreInfo();
+
+function showMoreInfoMain() {
+    let content = $('.description__wrapper').find('.content').height();
+    let info = $('.description__wrapper').find('.content p').height();
+
+    if(info > content) {
+        $('.description__wrapper').find('.more_link').addClass('show');
+    }else {
+        $('.description__wrapper').find('.more_link').removeClass('show');
+    }
+}
+
+showMoreInfoMain();
+
+$('.description__wrapper .more_link').on('click', function(e){
+    e.preventDefault();
+    
+    let parent = $(this).parents('.description__wrapper').toggleClass('show');;
+});
+
+$('.trainung-info__structure_item .more').on('click', function(e){
+    e.preventDefault();
+    
+    let parent = $(this).parents('.trainung-info__structure_item');
+    parent.find('.content').toggleClass('show');
+});
+
+// /More info consultation
+
 
 
 // Slider
@@ -56,6 +160,14 @@ $('.js-button').on('click', function(){
     $('.overlay').addClass('active');
 });
 
+$('.popup__drop-item').on('click', function(){
+    let text = $(this).text();
+    let parent = $(this).parents('.popup__drop');
+    
+    parent.find('.js-value').val(text);
+    $('.popup__drop').removeClass('active');
+});
+
 $('.drop_button').on('click', function(){
     $('.popup__drop').toggleClass('active');
 });
@@ -71,6 +183,12 @@ $('.js-close,.overlay').on('click', function(){
 
 $('.button__wrapper').on('click', function(){
     $(this).toggleClass('active');
+});
+
+$(document).on('click', function(e){
+    if(!e.target.closest('.button__wrapper')) {
+        $('.button__wrapper').removeClass('active')
+    }
 });
 
 // Form 

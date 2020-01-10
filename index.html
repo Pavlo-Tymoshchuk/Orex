@@ -16,7 +16,7 @@
             <nav class="header_nav">
                 <ul class="header__list">
                     <li class="header__item header__more">
-                        <a href="#" class="header__link">Консультации</a>
+                        <a href="#" class="header__link">Консультации <span class="icon-link-decor"></span></a>
                         <div class="sub_menu__wrapper">
                             <ul class="sub_menu__list">
                                 <li class="sub_menu__item">
@@ -77,10 +77,9 @@
                                 </li>
                             </ul>
                         </div>
-                        <span class="icon-link-decor"></span>
                     </li>
                     <li class="header__item header__more audit">
-                        <a href="#" class="header__link">Аудит</a>
+                        <a href="#" class="header__link">Аудит <span class="icon-link-decor"></span></a>
                         <div class="sub_menu__wrapper">
                             <ul class="sub_menu__list">
                                 <li class="sub_menu__item">
@@ -101,15 +100,25 @@
                                 </li>
                             </ul>
                         </div>
-                        <span class="icon-link-decor"></span>
                     </li>
                     <li class="header__item">
-                        <a href="#" class="header__link">Главная</a>
+                        <a href="#" class="header__link">Обучение</a>
                     </li>
                     <li class="header__item">
                         <a href="#" class="header__link">Новости</a>
                     </li>
+                    <li class="header__more change_leng">
+                        <a href="#" class="header__link active">Рус</a>
+                        <a href="#" class="header__link">Eng</a>
+                    </li>
+                    <li class="header-more-info__item">
+                        <a href="tel: 8 (910) 798 16 41">8 (910) 798 16 41</a>
+                    </li>
+                    <li class="header-more-info__item email">
+                        <a href="mailto: orexpro@inbox.ru">orexpro@inbox.ru</a>
+                    </li>
                 </ul>
+                <button class="mobile-close"><span class="icon-close"></span></button>
             </nav>
             <ul class="header-more-info__list">
                 <li class="header-more-info__item">
@@ -118,8 +127,8 @@
                 <li class="header-more-info__item email">
                     <a href="mailto: orexpro@inbox.ru">orexpro@inbox.ru</a>
                 </li>
-                <li class=" header__more change_leng">
-                    <a href="#" class="header__link">Рус</a>
+                <li class="header__more change_leng">
+                    <a href="#" class="header__link">Рус <span class="icon-link-decor"></span></a>
                     <div class="sub_menu__wrapper">
                         <ul class="sub_menu__list">
                             <li class="sub_menu__item">
@@ -130,12 +139,16 @@
                             </li>
                         </ul>
                     </div>
-                    <span class="icon-link-decor"></span>
                 </li>
             </ul>
+            <div class="mobile-burger"></div>
         </div>
     </header>
     <main>
+        <div class="mobile-video">
+            <video autoplay loop muted poster="./img/header/header-bg.png">
+            <source src="./video/video_header.mp4" type="video/mp4"></video>
+        </div>
         <section class="main_information">
             <div class="main_information__info container">
                 <h2 class="main_information_caption">
@@ -155,8 +168,10 @@
                 <h2 class="main_caption">Кто мы</h2>
                 <div class="description__wrapper">
                     <div class="info">
-                        <p>Мы оказываем услуги по разработке, внедрению и улучшению систем менеджмента качества. Внедряем эффективные методы управления в соответствии с лучшими мировыми практиками. Обучаем, проводим аудиты, занимаемся решением кризисных ситуаций в качестве, повышаем компетенции персонала, повышаем культуру производства, разрабатываем мотивационные программы.</p>
-                        <a href="#" class="more_link">Подробнее</a>
+                        <div class="content">
+                            <p>Мы оказываем услуги по разработке, внедрению и улучшению систем менеджмента качества. Внедряем эффективные методы управления в соответствии с лучшими мировыми практиками. Обучаем, проводим аудиты, занимаемся решением кризисных ситуаций в качестве, повышаем компетенции персонала, повышаем культуру производства, разрабатываем мотивационные программы.  проводим аудиты, занимаемся решением кризисных ситуаций в качестве, повышаем компетенции персонала, повышаем культуру производства, разрабатываем мотивационные программы.</p>
+                        </div>
+                        <a href="#" class="more_link"></a>
                         <ul class="description__list">
                             <li class="description__item">Консультируют опытные сертифицированные эксперты со знанием отрасли</li>
                             <li class="description__item">Состав консультационных услуг, формат консультирования определяет заказчик</li>
@@ -167,37 +182,68 @@
                     </div>
                     <div class="description_img" style="background-image: url(./img/about-us/big-img.jpg)"></div>
                 </div>
+                <ul class="description__list">
+                    <li class="description__item">Консультируют опытные сертифицированные эксперты со знанием отрасли</li>
+                    <li class="description__item">Состав консультационных услуг, формат консультирования определяет заказчик</li>
+                    <li class="description__item">Возможность получения поддержки 24/7</li>
+                    <li class="description__item">Выверенные сроки для качественного выполнения проекта</li>
+                    <li class="description__item">Рекомендации ведущих производителей</li>
+                </ul>
             </div>
             <div class="benefit__wrapper container">
                 <h2 class="main_caption">Выгоды для наших заказчиков</h2>
                 <ul class="benefit__list">
                     <li class="benefit__item">
-                        <div class="benefit__img" style="background-image: url(./img/about-us/decor-1.svg)"></div>
+                        <div class="decor-icon">
+                            <span>
+                                <img src="./img/about-us/decor-1.svg" alt="Иконка">
+                            </span>
+                        </div>
                         <h4>Современные методики</h4>
                         <p>Мы используем самые новые и прогрессивные методики для улучшения эффективности предлагаемых решений</p>
                     </li>
                     <li class="benefit__item">
-                        <div class="benefit__img" style="background-image: url(./img/about-us/decor-2.svg)"></div>
+                        <div class="decor-icon">
+                            <span>
+                                <img src="./img/about-us/decor-2.svg" alt="Иконка">
+                            </span>
+                        </div>
                         <h4>Менеджмент качества</h4>
                         <p>Наша компания имеет практический опыт работы с различными методами менеджмента качества</p>
                     </li>
                     <li class="benefit__item">
-                        <div class="benefit__img" style="background-image: url(./img/about-us/decor-3.svg)"></div>
+                        <div class="decor-icon">
+                            <span>
+                                <img src="./img/about-us/decor-3.svg" alt="Иконка">
+                            </span>
+                        </div>
                         <h4>Международный опыт</h4>
                         <p>Сотрудничая с клиентами с других стран, мы стали лучше понимать рынок и его потребности</p>
                     </li>
                     <li class="benefit__item">
-                        <div class="benefit__img" style="background-image: url(./img/about-us/decor-4.svg)"></div>
+                        <div class="decor-icon">
+                            <span>
+                                <img src="./img/about-us/decor-4.svg" alt="Иконка">
+                            </span>
+                        </div>
                         <h4>Потребности - главный ориентир</h4>
                         <p>Разработка услуг конкретно под потребности заказчика. Все, от малых задач до полной интеграции и выполнения проекта</p>
                     </li>
                     <li class="benefit__item">
-                        <div class="benefit__img" style="background-image: url(./img/about-us/decor-5.svg)"></div>
+                        <div class="decor-icon">
+                            <span>
+                                <img src="./img/about-us/decor-5.svg" alt="Иконка">
+                            </span>
+                        </div>
                         <h4>Гарантия результата</h4>
                         <p>Мы работаем на результат! Все решения ориентированы только на достижение поставленных целей и задач</p>
                     </li>
                     <li class="benefit__item">
-                        <div class="benefit__img" style="background-image: url(./img/about-us/decor-6.svg)"></div>
+                        <div class="decor-icon">
+                            <span>
+                                <img src="./img/about-us/decor-6.svg" alt="Иконка">
+                            </span>
+                        </div>
                         <h4>Ничего лишнего</h4>
                         <p>Мы не предлагаем не нужных решений, всё внимание мы уделяем лишь самым важным аспектам</p>
                     </li>
@@ -303,6 +349,16 @@
                 <ul class="portfolio__slider">
                     <li class="portfolio__slider_item show">
                         <div class="portfolio__slider_img" style="background-image:url(./img/portfolio/img-1.jpg)"></div>
+                        <div class="slider_button">
+                            <button class="button prev off_button">
+                                <span class="arrow arrow_prev"></span>
+                                <span>Предыдущий проект</span>
+                            </button>
+                            <button class="button next">
+                                <span class="arrow arrow_next"></span>
+                                <span>Следующий проект</span>
+                            </button>
+                        </div>
                         <div class="porfolio__slider_info">
                             <h4 class="caption">ООО “Sally”</h4>
                             <div class="wrapper">
@@ -311,7 +367,7 @@
                                     <p>Перебороть 2-х годичный застой в продажах, оптимизировать расходы</p>
                                 </div>
                                 <div>
-                                   <h6>Результат:</h6>
+                                    <h6>Результат:</h6>
                                     <p>Обьем продаж увеличился на 12%, сравнительно с прошлым годом. Рекламные вложения пересмотрены и оптимизированы</p> 
                                 </div>
                                 <div>
@@ -323,6 +379,16 @@
                     </li>
                     <li class="portfolio__slider_item">
                         <div class="portfolio__slider_img" style="background-image:url(./img/portfolio/img-1.jpg)"></div>
+                        <div class="slider_button">
+                            <button class="button prev off_button">
+                                <span class="arrow arrow_prev"></span>
+                                <span>Предыдущий проект</span>
+                            </button>
+                            <button class="button next">
+                                <span class="arrow arrow_next"></span>
+                                <span>Следующий проект</span>
+                            </button>
+                        </div>
                         <div class="porfolio__slider_info">
                             <h4 class="caption">ООО “Sally”</h4>
                             <div class="wrapper">
@@ -331,7 +397,7 @@
                                     <p>Перебороть 2-х годичный застой в продажах, оптимизировать расходы</p>
                                 </div>
                                 <div>
-                                   <h6>Результат:</h6>
+                                    <h6>Результат:</h6>
                                     <p>Обьем продаж увеличился на 12%, сравнительно с прошлым годом. Рекламные вложения пересмотрены и оптимизированы</p> 
                                 </div>
                                 <div>
@@ -343,6 +409,16 @@
                     </li>
                     <li class="portfolio__slider_item">
                         <div class="portfolio__slider_img" style="background-image:url(./img/portfolio/img-1.jpg)"></div>
+                        <div class="slider_button">
+                            <button class="button prev off_button">
+                                <span class="arrow arrow_prev"></span>
+                                <span>Предыдущий проект</span>
+                            </button>
+                            <button class="button next">
+                                <span class="arrow arrow_next"></span>
+                                <span>Следующий проект</span>
+                            </button>
+                        </div>
                         <div class="porfolio__slider_info">
                             <h4 class="caption">ООО “Sally”</h4>
                             <div class="wrapper">
@@ -351,7 +427,7 @@
                                     <p>Перебороть 2-х годичный застой в продажах, оптимизировать расходы</p>
                                 </div>
                                 <div>
-                                   <h6>Результат:</h6>
+                                    <h6>Результат:</h6>
                                     <p>Обьем продаж увеличился на 12%, сравнительно с прошлым годом. Рекламные вложения пересмотрены и оптимизированы</p> 
                                 </div>
                                 <div>
@@ -373,9 +449,11 @@
                     </button>
                 </div>
             </div>
-            <div class="news__wrapper container">
+            <div class="news__wrapper">
                 <h2 class="main_caption">Новости</h2>
                 <ul class="news__list">
+                    <li class="news__item">
+                    </li>
                     <li class="news__item">
                         <div class="news__img" style="background-image:url(./img/news/img-1.jpg)"></div>
                         <a href="#" class="news__link">Успешно прошли семинары «Аудитор / Ведущий аудитор системы менеджмента качества по ISO 9001:2015»</a>
@@ -400,13 +478,14 @@
                             <a href="#" class="more_link">Подробнее</a>
                         </div>
                     </li>
+                    <li class="news__item">
+                    </li>
                 </ul>
                 <div class="news-button__wrapper">
                     <button class="main_button news_button">
                         <span>Смотреть все</span>
                     </button>
                 </div>
-                
             </div>
         </section>
         <section class="callback">
@@ -447,7 +526,7 @@
             <h3 class="popup__caption">Заказать аудит</h3>
             <div class="popup__drop"  data-elem="audit">
                 <div class="input__wrapper drop_button">
-                    <input class="main-input" type="text" placeholder="Выбрать аудит" readonly>
+                    <input class="main-input js-value" type="text" placeholder="Выбрать аудит" readonly>
                     <span></span>
                 </div>
                 <ul class="popup__drop-list">
@@ -460,7 +539,7 @@
             </div>
             <div class="popup__drop" data-elem="consultation">
                 <div class="input__wrapper drop_button">
-                    <input class="main-input" type="text" placeholder="Заказать консультацию" readonly>
+                    <input class="main-input js-value" type="text" placeholder="Заказать консультацию" readonly>
                     <span></span>
                 </div>
                 <ul class="popup__drop-list">
